@@ -3,18 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>You're Invited — Our Wedding Celebration</title>
-  <meta name="description" content="Join us for our wedding celebration. A love story written in the stars.">
+  <title>Wedding Invitation</title>
+  <meta name="description" content="You are cordially invited to our wedding celebration.">
 
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Great+Vibes&family=Raleway:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&family=Playfair+Display:wght@400;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-  <!-- AOS -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
 
-  <!-- Custom CSS -->
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/scenes.css">
   <link rel="stylesheet" href="css/characters.css">
@@ -24,83 +21,74 @@
   <!-- Preloader -->
   <div id="preloader">
     <div class="preloader-inner">
-      <div class="ring-loader"></div>
-      <p class="preloader-text">A love story is loading...</p>
+      <div class="ornament-loader">✦</div>
+      <p class="preloader-text">Opening your invitation...</p>
     </div>
   </div>
 
-  <!-- Audio Toggle -->
-  <button id="audio-toggle" class="audio-btn" aria-label="Toggle music">
-    <svg class="audio-icon-on" viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
-    <svg class="audio-icon-off" viewBox="0 0 24 24" width="24" height="24" style="display:none"><path fill="currentColor" d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></svg>
-  </button>
+  <!-- Subtle Sparkle Particles -->
+  <div id="particles-sparkle" class="particles-container"></div>
 
-  <!-- Scene Navigation Dots -->
-  <nav id="scene-nav">
-    <a href="#scene-opening" class="nav-dot active" data-scene="opening"><span>Welcome</span></a>
-    <a href="#scene-title" class="nav-dot" data-scene="title"><span>Announcement</span></a>
-    <a href="#scene-story" class="nav-dot" data-scene="story"><span>Our Story</span></a>
-    <a href="#scene-date" class="nav-dot" data-scene="date"><span>Save the Date</span></a>
-    <a href="#scene-venue" class="nav-dot" data-scene="venue"><span>Venue</span></a>
-    <a href="#scene-schedule" class="nav-dot" data-scene="schedule"><span>Schedule</span></a>
-    <a href="#scene-gallery" class="nav-dot" data-scene="gallery"><span>Gallery</span></a>
-    <a href="#scene-closing" class="nav-dot" data-scene="closing"><span>Finale</span></a>
-  </nav>
 
 
   <!-- ============================================ -->
-  <!-- SCENE 1: Opening Curtain                     -->
+  <!-- SCENE 1: Cover / Landing                     -->
   <!-- ============================================ -->
-  <section id="scene-opening" class="scene">
-    <div id="particles-opening" class="particles-container"></div>
+  <section id="scene-cover" class="scene">
+    <!-- Decorative corners -->
+    <img src="images/corner-paisley.png" class="decor decor-corner-tl" alt="" loading="lazy">
+    <img src="images/corner-paisley.png" class="decor decor-corner-br" alt="" loading="lazy">
 
-    <div class="letterbox letterbox-top"></div>
-    <div class="letterbox letterbox-bottom"></div>
-
-    <div class="scene-content opening-content">
-      <div class="silhouette-stage">
-        <div class="silhouette silhouette-groom">
-          <svg viewBox="0 0 120 200" class="char-svg">
-            <g class="groom-body">
-              <ellipse cx="60" cy="30" rx="18" ry="20" fill="#0a0a0a" stroke="#D4AF37" stroke-width="0.5"/>
-              <rect x="42" y="48" width="36" height="55" rx="8" fill="#0a0a0a" stroke="#D4AF37" stroke-width="0.5"/>
-              <rect x="30" y="50" width="14" height="45" rx="6" fill="#0a0a0a" stroke="#D4AF37" stroke-width="0.3" transform="rotate(-10 37 50)"/>
-              <rect x="76" y="50" width="14" height="45" rx="6" fill="#0a0a0a" stroke="#D4AF37" stroke-width="0.3" transform="rotate(10 83 50)"/>
-              <rect x="44" y="100" width="14" height="55" rx="5" fill="#0a0a0a" stroke="#D4AF37" stroke-width="0.3"/>
-              <rect x="62" y="100" width="14" height="55" rx="5" fill="#0a0a0a" stroke="#D4AF37" stroke-width="0.3"/>
-              <rect x="35" y="10" width="50" height="8" rx="4" fill="#0a0a0a" stroke="#D4AF37" stroke-width="0.5"/>
-              <line x1="50" y1="55" x2="50" y2="95" stroke="#D4AF37" stroke-width="0.5"/>
-              <circle cx="50" cy="55" r="2" fill="#D4AF37"/>
-            </g>
-          </svg>
-        </div>
-        <div class="silhouette silhouette-bride">
-          <svg viewBox="0 0 140 220" class="char-svg">
-            <g class="bride-body">
-              <ellipse cx="70" cy="30" rx="17" ry="19" fill="#0a0a0a" stroke="#D4AF37" stroke-width="0.5"/>
-              <path d="M45 48 Q70 45 95 48 L105 130 Q70 145 35 130 Z" fill="#0a0a0a" stroke="#D4AF37" stroke-width="0.5"/>
-              <path d="M35 130 Q70 150 105 130 L115 200 Q70 215 25 200 Z" fill="#0a0a0a" stroke="#D4AF37" stroke-width="0.3" opacity="0.8"/>
-              <rect x="30" y="50" width="12" height="40" rx="5" fill="#0a0a0a" stroke="#D4AF37" stroke-width="0.3" transform="rotate(-15 36 50)"/>
-              <rect x="98" y="50" width="12" height="40" rx="5" fill="#0a0a0a" stroke="#D4AF37" stroke-width="0.3" transform="rotate(15 104 50)"/>
-              <path d="M50 10 Q70 -5 90 10 Q95 25 90 30 L70 30 L50 30 Q45 25 50 10Z" fill="#0a0a0a" stroke="#D4AF37" stroke-width="0.3" opacity="0.5"/>
-              <ellipse cx="70" cy="18" rx="22" ry="4" fill="none" stroke="#D4AF37" stroke-width="0.8"/>
-              <circle cx="60" cy="60" r="1.5" fill="#D4AF37" opacity="0.6"/>
-              <circle cx="70" cy="75" r="1.5" fill="#D4AF37" opacity="0.6"/>
-              <circle cx="65" cy="90" r="1.5" fill="#D4AF37" opacity="0.6"/>
-            </g>
-          </svg>
+    <div class="scene-content cover-content">
+      <!-- Ornate oval frame with monogram inside -->
+      <div class="monogram-wrapper" data-aos="zoom-in" data-aos-duration="1200">
+        <img src="images/frame-oval.png" class="monogram-frame-img" alt="Ornate frame">
+        <div class="monogram-initials">
+          <span class="monogram-letter">G</span>
+          <span class="monogram-ampersand">&amp;</span>
+          <span class="monogram-letter">B</span>
         </div>
       </div>
 
-      <div class="opening-text">
-        <p class="opening-subtitle script-font">once upon a time...</p>
-        <h1 class="opening-title">A Love Story Begins</h1>
+      <p class="cover-label script-font" data-aos="fade-up" data-aos-delay="400">Wedding Celebration</p>
+
+      <button class="open-invitation-btn" id="open-invitation" data-aos="fade-up" data-aos-delay="600">
+        OPEN INVITATION
+      </button>
+    </div>
+  </section>
+
+
+  <!-- ============================================ -->
+  <!-- SCENE 2: The Couple                          -->
+  <!-- ============================================ -->
+  <section id="scene-couple" class="scene">
+    <!-- Floral corners -->
+    <img src="images/floral-corners.png" class="decor decor-floral-corners" alt="" loading="lazy">
+
+    <div class="scene-content couple-content">
+      <p class="couple-invocation" data-aos="fade-up">
+        We cordially invite you with<br>your family for the wedding ceremony of
+      </p>
+
+      <!-- Couple in floral arch illustration -->
+      <div class="couple-illustration" data-aos="zoom-in" data-aos-delay="200">
+        <img src="images/arch-floral-couple.png" alt="Couple under floral arch" class="couple-arch-img">
       </div>
 
-      <div class="scroll-indicator">
-        <span>Scroll to begin</span>
-        <div class="scroll-arrow">
-          <svg viewBox="0 0 24 24" width="24" height="24"><path fill="#D4AF37" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg>
+      <div class="couple-details" data-aos="fade-up" data-aos-delay="300">
+        <div class="person bride-info">
+          <h2 class="person-name script-font">Bride Name</h2>
+          <p class="person-parents">Daughter of Mr. Father Name<br>&amp; Mrs. Mother Name</p>
+        </div>
+
+        <div class="couple-separator">
+          <span class="separator-amp script-font">&amp;</span>
+        </div>
+
+        <div class="person groom-info">
+          <h2 class="person-name script-font">Groom Name</h2>
+          <p class="person-parents">Son of Mr. Father Name<br>&amp; Mrs. Mother Name</p>
         </div>
       </div>
     </div>
@@ -108,491 +96,193 @@
 
 
   <!-- ============================================ -->
-  <!-- SCENE 2: The Announcement                    -->
-  <!-- ============================================ -->
-  <section id="scene-title" class="scene">
-    <div id="particles-title" class="particles-container"></div>
-
-    <div class="scene-content title-content">
-      <div class="ring-animation">
-        <svg viewBox="0 0 200 200" class="ring-svg">
-          <defs>
-            <linearGradient id="ring-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" style="stop-color:#FFD700"/>
-              <stop offset="50%" style="stop-color:#D4AF37"/>
-              <stop offset="100%" style="stop-color:#B8860B"/>
-            </linearGradient>
-          </defs>
-          <circle cx="100" cy="100" r="60" fill="none" stroke="url(#ring-gradient)" stroke-width="4" class="ring-circle"/>
-          <circle cx="100" cy="40" r="6" fill="#FFD700" class="ring-diamond"/>
-          <path d="M94 34 L100 22 L106 34" fill="#FFD700" class="ring-diamond-top" opacity="0.8"/>
-        </svg>
-      </div>
-
-      <div class="couple-names">
-        <h2 class="name groom-name" data-text="Groom Name">Groom Name</h2>
-        <span class="ampersand script-font">&amp;</span>
-        <h2 class="name bride-name" data-text="Bride Name">Bride Name</h2>
-      </div>
-
-      <div class="invitation-line">
-        <div class="ornament-left"></div>
-        <p class="script-font">You Are Cordially Invited</p>
-        <div class="ornament-right"></div>
-      </div>
-
-      <div class="floating-petals">
-        <div class="petal petal-1"></div>
-        <div class="petal petal-2"></div>
-        <div class="petal petal-3"></div>
-        <div class="petal petal-4"></div>
-        <div class="petal petal-5"></div>
-        <div class="petal petal-6"></div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ============================================ -->
-  <!-- SCENE 3: Our Story (Horizontal Scroll)       -->
-  <!-- ============================================ -->
-  <section id="scene-story" class="scene">
-    <div class="story-wrapper">
-      <div class="story-track">
-
-        <!-- Story Intro -->
-        <div class="story-panel story-intro">
-          <h2 class="scene-heading">Our Story</h2>
-          <p class="script-font scene-subheading">A journey written in the stars</p>
-          <div class="gold-thread-start"></div>
-        </div>
-
-        <!-- Milestone 1 -->
-        <div class="story-panel milestone" data-milestone="met">
-          <div class="milestone-card">
-            <div class="milestone-icon">
-              <svg viewBox="0 0 80 80"><circle cx="40" cy="40" r="35" fill="none" stroke="#D4AF37" stroke-width="2"/><text x="40" y="45" text-anchor="middle" fill="#D4AF37" font-size="28">✦</text></svg>
-            </div>
-            <h3>How We Met</h3>
-            <p class="milestone-date">Placeholder Date</p>
-            <p class="milestone-desc">A chance encounter that changed everything. The stars aligned and our paths crossed in the most beautiful way.</p>
-          </div>
-          <div class="cartoon-couple cartoon-wave">
-            <svg viewBox="0 0 200 160" class="chibi-svg">
-              <!-- Groom chibi -->
-              <g class="chibi-groom" transform="translate(40, 10)">
-                <circle cx="30" cy="30" r="25" fill="#1a1a3e"/>
-                <circle cx="22" cy="26" r="4" fill="#F5E6C8"/>
-                <circle cx="38" cy="26" r="4" fill="#F5E6C8"/>
-                <circle cx="22" cy="27" r="2" fill="#0E0E2C"/>
-                <circle cx="38" cy="27" r="2" fill="#0E0E2C"/>
-                <path d="M25 36 Q30 42 35 36" fill="none" stroke="#F5E6C8" stroke-width="1.5" stroke-linecap="round"/>
-                <rect x="18" y="55" width="24" height="35" rx="8" fill="#1a1a3e" stroke="#D4AF37" stroke-width="1"/>
-                <line x1="30" y1="60" x2="30" y2="85" stroke="#D4AF37" stroke-width="0.8"/>
-                <rect x="6" y="58" width="14" height="8" rx="4" fill="#1a1a3e" transform="rotate(-30 13 62)" class="chibi-arm-wave"/>
-                <rect x="40" y="58" width="14" height="8" rx="4" fill="#1a1a3e"/>
-                <rect x="20" y="88" width="10" height="25" rx="4" fill="#1a1a3e"/>
-                <rect x="32" y="88" width="10" height="25" rx="4" fill="#1a1a3e"/>
-                <path d="M10 8 Q30 -8 50 8 Q52 20 48 28 L12 28 Q8 20 10 8Z" fill="#1a1a3e"/>
-              </g>
-              <!-- Bride chibi -->
-              <g class="chibi-bride" transform="translate(110, 10)">
-                <circle cx="30" cy="30" r="25" fill="#2a1a3e"/>
-                <circle cx="22" cy="26" r="4" fill="#F5E6C8"/>
-                <circle cx="38" cy="26" r="4" fill="#F5E6C8"/>
-                <circle cx="22" cy="27" r="2" fill="#0E0E2C"/>
-                <circle cx="38" cy="27" r="2" fill="#0E0E2C"/>
-                <path d="M25 36 Q30 42 35 36" fill="none" stroke="#F5E6C8" stroke-width="1.5" stroke-linecap="round"/>
-                <path d="M15 55 Q30 50 45 55 L50 100 Q30 108 10 100Z" fill="#8B1A4A" stroke="#D4AF37" stroke-width="0.5"/>
-                <rect x="6" y="58" width="12" height="8" rx="4" fill="#2a1a3e"/>
-                <rect x="42" y="58" width="12" height="8" rx="4" fill="#2a1a3e"/>
-                <path d="M8 8 Q30 -10 52 8 Q55 25 50 30 L30 30 L10 30 Q5 25 8 8Z" fill="#2a1a3e"/>
-                <ellipse cx="30" cy="14" rx="28" ry="3" fill="none" stroke="#D4AF37" stroke-width="0.8"/>
-              </g>
-              <!-- Hearts -->
-              <g class="floating-hearts">
-                <text x="90" y="40" fill="#D4AF37" font-size="16" opacity="0.8">♥</text>
-                <text x="100" y="25" fill="#FFD700" font-size="12" opacity="0.6">♥</text>
-                <text x="82" y="55" fill="#D4AF37" font-size="10" opacity="0.7">♥</text>
-              </g>
-            </svg>
-          </div>
-        </div>
-
-        <!-- Milestone 2 -->
-        <div class="story-panel milestone" data-milestone="date">
-          <div class="milestone-card">
-            <div class="milestone-icon">
-              <svg viewBox="0 0 80 80"><circle cx="40" cy="40" r="35" fill="none" stroke="#D4AF37" stroke-width="2"/><text x="40" y="45" text-anchor="middle" fill="#D4AF37" font-size="28">♥</text></svg>
-            </div>
-            <h3>First Date</h3>
-            <p class="milestone-date">Placeholder Date</p>
-            <p class="milestone-desc">Nervous butterflies and endless conversations. We knew this was the beginning of something extraordinary.</p>
-          </div>
-        </div>
-
-        <!-- Milestone 3 -->
-        <div class="story-panel milestone" data-milestone="proposal">
-          <div class="milestone-card">
-            <div class="milestone-icon">
-              <svg viewBox="0 0 80 80"><circle cx="40" cy="40" r="35" fill="none" stroke="#D4AF37" stroke-width="2"/><text x="40" y="45" text-anchor="middle" fill="#D4AF37" font-size="28">💍</text></svg>
-            </div>
-            <h3>The Proposal</h3>
-            <p class="milestone-date">Placeholder Date</p>
-            <p class="milestone-desc">One knee, one question, one forever. She said yes, and the rest is history being written.</p>
-          </div>
-        </div>
-
-        <!-- Story End -->
-        <div class="story-panel story-end">
-          <p class="script-font" style="font-size: 2rem; color: var(--gold);">And now, the next chapter...</p>
-        </div>
-
-      </div>
-    </div>
-
-    <svg class="gold-thread" viewBox="0 0 100 10" preserveAspectRatio="none">
-      <line x1="0" y1="5" x2="100" y2="5" stroke="#D4AF37" stroke-width="0.5" stroke-dasharray="4 2" class="thread-line"/>
-    </svg>
-  </section>
-
-
-  <!-- ============================================ -->
-  <!-- SCENE 4: Save the Date                       -->
+  <!-- SCENE 3: Save the Date                       -->
   <!-- ============================================ -->
   <section id="scene-date" class="scene">
-    <div id="particles-date" class="particles-container"></div>
+    <!-- Decorative bouquet -->
+    <img src="images/bouquet.png" class="decor decor-bouquet-left" alt="" loading="lazy">
 
     <div class="scene-content date-content">
-      <h2 class="scene-heading" data-aos="fade-up">Save the Date</h2>
+      <p class="date-label" data-aos="fade-up">Save the Date</p>
 
-      <div class="calendar-flip">
-        <div class="calendar-card">
-          <div class="calendar-front">
-            <div class="cal-ornament">❋</div>
+      <div class="scratch-container" data-aos="zoom-in" data-aos-delay="200">
+        <div class="scratch-reveal">
+          <div class="date-revealed">
+            <div class="date-day">DD</div>
+            <div class="date-month">MONTH</div>
+            <div class="date-year-weekday">YEAR &middot; DAY</div>
           </div>
-          <div class="calendar-back">
-            <div class="cal-month">MONTH YEAR</div>
-            <div class="cal-day">DD</div>
-            <div class="cal-weekday">Day of Week</div>
+          <canvas id="scratch-canvas" class="scratch-canvas"></canvas>
+          <div class="scratch-hint">
+            <span>✦ Scratch to Reveal ✦</span>
           </div>
         </div>
       </div>
 
-      <div class="countdown-container">
+      <div class="countdown-container" data-aos="fade-up" data-aos-delay="400">
         <div class="countdown-item">
           <span class="countdown-number" id="countdown-days">000</span>
           <span class="countdown-label">Days</span>
         </div>
-        <div class="countdown-separator">:</div>
         <div class="countdown-item">
           <span class="countdown-number" id="countdown-hours">00</span>
           <span class="countdown-label">Hours</span>
         </div>
-        <div class="countdown-separator">:</div>
         <div class="countdown-item">
           <span class="countdown-number" id="countdown-minutes">00</span>
           <span class="countdown-label">Minutes</span>
         </div>
-        <div class="countdown-separator">:</div>
         <div class="countdown-item">
           <span class="countdown-number" id="countdown-seconds">00</span>
           <span class="countdown-label">Seconds</span>
         </div>
       </div>
-
-      <div class="confetti-container"></div>
     </div>
   </section>
 
 
   <!-- ============================================ -->
-  <!-- SCENE 5: The Venue                           -->
+  <!-- SCENE 4: Engagement Event                    -->
   <!-- ============================================ -->
-  <section id="scene-venue" class="scene">
-    <div class="venue-parallax">
-      <!-- Sky layer -->
-      <div class="parallax-layer sky-layer">
-        <div class="star" style="top:10%;left:15%"></div>
-        <div class="star" style="top:20%;left:45%"></div>
-        <div class="star" style="top:8%;left:70%"></div>
-        <div class="star" style="top:30%;left:85%"></div>
-        <div class="star" style="top:15%;left:30%"></div>
-        <div class="star" style="top:25%;left:60%"></div>
-        <div class="star" style="top:5%;left:50%"></div>
-        <div class="star" style="top:18%;left:90%"></div>
-        <div class="moon"></div>
+  <section id="scene-engagement" class="scene">
+    <div class="scene-content event-content">
+      <h2 class="event-title script-font" data-aos="fade-up">Engagement</h2>
+      <p class="event-subtitle" data-aos="fade-up" data-aos-delay="100">Nichayathartham</p>
+
+      <!-- Mandap illustration -->
+      <div class="event-illustration" data-aos="zoom-in" data-aos-delay="150">
+        <img src="images/mandap.png" alt="Wedding mandap" class="event-scene-img">
       </div>
 
-      <!-- Building layer -->
-      <div class="parallax-layer building-layer">
-        <svg viewBox="0 0 800 400" class="venue-building" preserveAspectRatio="xMidYMax meet">
-          <!-- Palace / Venue silhouette -->
-          <g fill="#0E0E2C" stroke="#D4AF37" stroke-width="0.8">
-            <!-- Main building -->
-            <rect x="250" y="120" width="300" height="280" rx="4"/>
-            <!-- Central dome -->
-            <ellipse cx="400" cy="120" rx="80" ry="50"/>
-            <circle cx="400" cy="75" r="8" fill="#D4AF37" opacity="0.6"/>
-            <!-- Left tower -->
-            <rect x="200" y="80" width="60" height="320" rx="3"/>
-            <polygon points="200,80 230,30 260,80" fill="#0E0E2C" stroke="#D4AF37"/>
-            <!-- Right tower -->
-            <rect x="540" y="80" width="60" height="320" rx="3"/>
-            <polygon points="540,80 570,30 600,80" fill="#0E0E2C" stroke="#D4AF37"/>
-            <!-- Windows -->
-            <rect x="310" y="170" width="30" height="45" rx="15" fill="#1a1a3e" stroke="#D4AF37" stroke-width="0.5"/>
-            <rect x="370" y="170" width="30" height="45" rx="15" fill="#1a1a3e" stroke="#D4AF37" stroke-width="0.5"/>
-            <rect x="430" y="170" width="30" height="45" rx="15" fill="#1a1a3e" stroke="#D4AF37" stroke-width="0.5"/>
-            <!-- Door -->
-            <rect x="370" y="300" width="60" height="100" rx="30" fill="#1a1a3e" stroke="#D4AF37"/>
-            <!-- Steps -->
-            <rect x="340" y="395" width="120" height="8" rx="2" opacity="0.5"/>
-            <rect x="350" y="388" width="100" height="8" rx="2" opacity="0.5"/>
-          </g>
-          <!-- Glow from windows -->
-          <rect x="315" y="175" width="20" height="35" rx="10" fill="#FFD700" opacity="0.1"/>
-          <rect x="375" y="175" width="20" height="35" rx="10" fill="#FFD700" opacity="0.1"/>
-          <rect x="435" y="175" width="20" height="35" rx="10" fill="#FFD700" opacity="0.1"/>
-        </svg>
-      </div>
-
-      <!-- Foreground layer -->
-      <div class="parallax-layer foreground-layer">
-        <div class="venue-arch">
-          <svg viewBox="0 0 400 200" class="arch-svg" preserveAspectRatio="xMidYMax meet">
-            <path d="M50 200 L50 60 Q200 -20 350 60 L350 200" fill="none" stroke="#D4AF37" stroke-width="2" class="arch-path"/>
-            <circle cx="200" cy="20" r="12" fill="none" stroke="#D4AF37" stroke-width="1.5"/>
-            <path d="M194 15 L200 5 L206 15" fill="#D4AF37" opacity="0.6"/>
-          </svg>
+      <div class="event-details" data-aos="fade-up" data-aos-delay="200">
+        <div class="event-info-row">
+          <span class="event-icon">📅</span>
+          <span>Thursday, DD Month YYYY</span>
+        </div>
+        <div class="event-info-row">
+          <span class="event-icon">🕐</span>
+          <span>00:00 AM</span>
+        </div>
+        <div class="event-info-row">
+          <span class="event-icon">📍</span>
+          <span>Venue Name, City</span>
         </div>
       </div>
-    </div>
 
-    <div class="scene-content venue-content">
-      <h2 class="scene-heading venue-title" data-aos="fade-up">The Venue</h2>
-      <h3 class="venue-name script-font" data-aos="fade-up" data-aos-delay="200">Venue Name Palace</h3>
-      <p class="venue-address" data-aos="fade-up" data-aos-delay="400">
-        <span class="location-pin">📍</span>
-        123 Wedding Avenue, City, State — ZIP
+      <div class="venue-actions" data-aos="fade-up" data-aos-delay="300">
+        <a href="#" class="map-btn" id="engagement-map-btn" target="_blank" rel="noopener">Open Map</a>
+        <div class="qr-container" id="engagement-qr"></div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================ -->
+  <!-- SCENE 5: Wedding Event                       -->
+  <!-- ============================================ -->
+  <section id="scene-wedding" class="scene">
+    <div class="scene-content event-content">
+      <h2 class="event-title script-font" data-aos="fade-up">Wedding Ceremony</h2>
+      <p class="event-subtitle" data-aos="fade-up" data-aos-delay="100">Thirumanam</p>
+
+      <!-- Floral arch illustration -->
+      <div class="event-illustration" data-aos="zoom-in" data-aos-delay="150">
+        <img src="images/arch-blush.png" alt="Floral wedding arch" class="event-scene-img">
+      </div>
+
+      <div class="event-details" data-aos="fade-up" data-aos-delay="200">
+        <div class="event-info-row">
+          <span class="event-icon">📅</span>
+          <span>Friday, DD Month YYYY</span>
+        </div>
+        <div class="event-info-row">
+          <span class="event-icon">🕐</span>
+          <span>00:00 AM</span>
+        </div>
+        <div class="event-info-row">
+          <span class="event-icon">📍</span>
+          <span>Venue Name, City</span>
+        </div>
+      </div>
+
+      <div class="venue-actions" data-aos="fade-up" data-aos-delay="300">
+        <a href="#" class="map-btn" id="wedding-map-btn" target="_blank" rel="noopener">Open Map</a>
+        <div class="qr-container" id="wedding-qr"></div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================ -->
+  <!-- SCENE 6: Guest Message                       -->
+  <!-- ============================================ -->
+  <section id="scene-guest" class="scene">
+    <!-- Floral side decoration -->
+    <img src="images/floral-border-right.png" class="decor decor-floral-right" alt="" loading="lazy">
+
+    <div class="scene-content guest-content">
+      <h2 class="guest-heading script-font" data-aos="fade-up">Dear Guest</h2>
+
+      <!-- Bride illustration -->
+      <div class="guest-illustration" data-aos="zoom-in" data-aos-delay="100">
+        <img src="images/bride-solo.png" alt="" class="bride-solo-img">
+      </div>
+
+      <div class="guest-message" data-aos="fade-up" data-aos-delay="200">
+        <p>Your presence, blessing<br>and love will make our<br>celebration truly complete</p>
+      </div>
+
+      <div class="guest-names" data-aos="fade-up" data-aos-delay="400">
+        <span class="guest-separator">—</span>
+        <p class="script-font">Bride Name</p>
+        <p class="separator-amp script-font">&amp;</p>
+        <p class="script-font">Groom Name</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================ -->
+  <!-- SCENE 7: Thank You                           -->
+  <!-- ============================================ -->
+  <section id="scene-thankyou" class="scene">
+    <div class="scene-content thankyou-content">
+      <h2 class="thankyou-heading script-font" data-aos="fade-up">Thank You</h2>
+      <p class="thankyou-message" data-aos="fade-up" data-aos-delay="200">
+        We look forward to<br>celebrating the day with you.
       </p>
-    </div>
-  </section>
 
-
-  <!-- ============================================ -->
-  <!-- SCENE 6: The Schedule                        -->
-  <!-- ============================================ -->
-  <section id="scene-schedule" class="scene">
-    <div class="scene-content schedule-content">
-      <h2 class="scene-heading" data-aos="fade-up">The Celebration</h2>
-      <p class="script-font scene-subheading" data-aos="fade-up" data-aos-delay="100">An evening of love, laughter &amp; joy</p>
-
-      <div class="timeline">
-        <div class="timeline-line"></div>
-
-        <div class="timeline-event" data-aos="fade-right">
-          <div class="event-time">
-            <svg class="clock-icon" viewBox="0 0 50 50">
-              <circle cx="25" cy="25" r="22" fill="none" stroke="#D4AF37" stroke-width="1.5"/>
-              <line x1="25" y1="25" x2="25" y2="12" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round" class="clock-hour"/>
-              <line x1="25" y1="25" x2="35" y2="25" stroke="#F5E6C8" stroke-width="1" stroke-linecap="round" class="clock-minute"/>
-              <circle cx="25" cy="25" r="2" fill="#D4AF37"/>
-            </svg>
-            <span>00:00 AM</span>
-          </div>
-          <div class="event-card">
-            <div class="candle-glow"></div>
-            <h3>The Ceremony</h3>
-            <p>Where two souls become one. Join us as we exchange our vows under a canopy of stars.</p>
-          </div>
-        </div>
-
-        <div class="timeline-event" data-aos="fade-left">
-          <div class="event-time">
-            <svg class="clock-icon" viewBox="0 0 50 50">
-              <circle cx="25" cy="25" r="22" fill="none" stroke="#D4AF37" stroke-width="1.5"/>
-              <line x1="25" y1="25" x2="25" y2="12" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round" class="clock-hour"/>
-              <line x1="25" y1="25" x2="35" y2="20" stroke="#F5E6C8" stroke-width="1" stroke-linecap="round" class="clock-minute"/>
-              <circle cx="25" cy="25" r="2" fill="#D4AF37"/>
-            </svg>
-            <span>00:00 PM</span>
-          </div>
-          <div class="event-card">
-            <div class="candle-glow"></div>
-            <h3>Cocktail Hour</h3>
-            <p>Raise a glass and mingle. Music, laughter, and delightful conversations await.</p>
-          </div>
-        </div>
-
-        <div class="timeline-event" data-aos="fade-right">
-          <div class="event-time">
-            <svg class="clock-icon" viewBox="0 0 50 50">
-              <circle cx="25" cy="25" r="22" fill="none" stroke="#D4AF37" stroke-width="1.5"/>
-              <line x1="25" y1="25" x2="18" y2="14" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round" class="clock-hour"/>
-              <line x1="25" y1="25" x2="38" y2="25" stroke="#F5E6C8" stroke-width="1" stroke-linecap="round" class="clock-minute"/>
-              <circle cx="25" cy="25" r="2" fill="#D4AF37"/>
-            </svg>
-            <span>00:00 PM</span>
-          </div>
-          <div class="event-card">
-            <div class="candle-glow"></div>
-            <h3>Grand Reception</h3>
-            <p>An enchanted evening of celebration with dinner, music, and dancing under the stars.</p>
-          </div>
-        </div>
-
-        <div class="timeline-event" data-aos="fade-left">
-          <div class="event-time">
-            <svg class="clock-icon" viewBox="0 0 50 50">
-              <circle cx="25" cy="25" r="22" fill="none" stroke="#D4AF37" stroke-width="1.5"/>
-              <line x1="25" y1="25" x2="15" y2="18" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round" class="clock-hour"/>
-              <line x1="25" y1="25" x2="25" y2="38" stroke="#F5E6C8" stroke-width="1" stroke-linecap="round" class="clock-minute"/>
-              <circle cx="25" cy="25" r="2" fill="#D4AF37"/>
-            </svg>
-            <span>00:00 PM</span>
-          </div>
-          <div class="event-card">
-            <div class="candle-glow"></div>
-            <h3>Dinner &amp; Dance</h3>
-            <p>Feast, dance, and make memories. The night is young and the celebration continues!</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ============================================ -->
-  <!-- SCENE 7: Gallery                             -->
-  <!-- ============================================ -->
-  <section id="scene-gallery" class="scene">
-    <div class="film-grain"></div>
-
-    <div class="scene-content gallery-content">
-      <h2 class="scene-heading" data-aos="fade-up">Our Moments</h2>
-      <p class="script-font scene-subheading" data-aos="fade-up">A glimpse into our journey</p>
-
-      <div class="gallery-strip">
-        <div class="gallery-track">
-          <div class="polaroid" data-aos="zoom-in" data-aos-delay="0">
-            <div class="polaroid-img placeholder-img">
-              <span>Photo 1</span>
-            </div>
-            <p class="polaroid-caption">Our first adventure</p>
-          </div>
-          <div class="polaroid" data-aos="zoom-in" data-aos-delay="100">
-            <div class="polaroid-img placeholder-img">
-              <span>Photo 2</span>
-            </div>
-            <p class="polaroid-caption">That sunset evening</p>
-          </div>
-          <div class="polaroid" data-aos="zoom-in" data-aos-delay="200">
-            <div class="polaroid-img placeholder-img">
-              <span>Photo 3</span>
-            </div>
-            <p class="polaroid-caption">Laughing together</p>
-          </div>
-          <div class="polaroid" data-aos="zoom-in" data-aos-delay="300">
-            <div class="polaroid-img placeholder-img">
-              <span>Photo 4</span>
-            </div>
-            <p class="polaroid-caption">She said yes!</p>
-          </div>
-          <div class="polaroid" data-aos="zoom-in" data-aos-delay="400">
-            <div class="polaroid-img placeholder-img">
-              <span>Photo 5</span>
-            </div>
-            <p class="polaroid-caption">Together forever</p>
-          </div>
-          <div class="polaroid" data-aos="zoom-in" data-aos-delay="500">
-            <div class="polaroid-img placeholder-img">
-              <span>Photo 6</span>
-            </div>
-            <p class="polaroid-caption">Pre-wedding glow</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ============================================ -->
-  <!-- SCENE 8: Closing / Thank You                 -->
-  <!-- ============================================ -->
-  <section id="scene-closing" class="scene">
-    <div id="particles-closing" class="particles-container"></div>
-    <div class="fireworks-container">
-      <div class="firework firework-1"></div>
-      <div class="firework firework-2"></div>
-      <div class="firework firework-3"></div>
-      <div class="firework firework-4"></div>
-      <div class="firework firework-5"></div>
-    </div>
-
-    <div class="scene-content closing-content">
-      <div class="closing-characters">
-        <!-- Silhouette couple together -->
-        <svg viewBox="0 0 300 220" class="closing-couple-svg">
-          <g class="couple-together">
-            <!-- Groom silhouette -->
-            <g transform="translate(90, 10)">
-              <ellipse cx="35" cy="25" rx="15" ry="17" fill="#0a0a0a" stroke="#D4AF37" stroke-width="0.5"/>
-              <rect x="20" y="40" width="30" height="50" rx="6" fill="#0a0a0a" stroke="#D4AF37" stroke-width="0.5"/>
-              <rect x="20" y="88" width="12" height="48" rx="4" fill="#0a0a0a" stroke="#D4AF37" stroke-width="0.3"/>
-              <rect x="38" y="88" width="12" height="48" rx="4" fill="#0a0a0a" stroke="#D4AF37" stroke-width="0.3"/>
-              <rect x="13" y="8" width="44" height="7" rx="3" fill="#0a0a0a" stroke="#D4AF37" stroke-width="0.5"/>
-              <line x1="30" y1="47" x2="30" y2="82" stroke="#D4AF37" stroke-width="0.5"/>
-              <circle cx="30" cy="47" r="1.5" fill="#D4AF37"/>
-            </g>
-            <!-- Bride silhouette -->
-            <g transform="translate(150, 10)">
-              <ellipse cx="35" cy="25" rx="14" ry="16" fill="#0a0a0a" stroke="#D4AF37" stroke-width="0.5"/>
-              <path d="M18 40 Q35 36 52 40 L58 100 Q35 112 12 100Z" fill="#0a0a0a" stroke="#D4AF37" stroke-width="0.5"/>
-              <path d="M12 100 Q35 115 58 100 L65 160 Q35 175 5 160Z" fill="#0a0a0a" stroke="#D4AF37" stroke-width="0.3" opacity="0.7"/>
-              <path d="M20 6 Q35 -6 50 6 Q53 18 50 22 L35 22 L20 22 Q17 18 20 6Z" fill="#0a0a0a" stroke="#D4AF37" stroke-width="0.3" opacity="0.5"/>
-              <ellipse cx="35" cy="13" rx="18" ry="3" fill="none" stroke="#D4AF37" stroke-width="0.7"/>
-            </g>
-            <!-- Connecting hands / heart -->
-            <g class="couple-heart">
-              <path d="M140 80 Q150 65 160 80 Q160 90 150 100 Q140 90 140 80Z" fill="#D4AF37" opacity="0.6" class="heart-beat"/>
-            </g>
-          </g>
-        </svg>
+      <!-- Couple on bicycle -->
+      <div class="thankyou-illustration" data-aos="zoom-in" data-aos-delay="300">
+        <img src="images/heart-tree-bicycle.png" alt="" class="thankyou-img">
       </div>
 
-      <h2 class="closing-title">We Can't Wait to<br>Celebrate With You!</h2>
-      <p class="script-font closing-subtitle">With love and excitement</p>
-      <p class="closing-names">Groom Name &amp; Bride Name</p>
-
-      <div class="closing-actions">
+      <div class="thankyou-actions" data-aos="fade-up" data-aos-delay="400">
         <button class="share-btn" id="share-btn">
-          <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z"/></svg>
+          <svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z"/></svg>
           Share Invitation
         </button>
       </div>
 
-      <button class="back-to-top" id="back-to-top" aria-label="Back to top">
-        <svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
-      </button>
-
-      <p class="closing-footer">Made with ♥</p>
+      <p class="footer-credit">Made with ♥</p>
     </div>
+
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+      <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
+    </button>
   </section>
 
 
   <!-- Scripts -->
-  <!-- GSAP + ScrollTrigger -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <!-- tsParticles -->
   <script src="https://cdn.jsdelivr.net/npm/tsparticles-slim@2.12.0/tsparticles.slim.bundle.min.js"></script>
-  <!-- AOS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
 
-  <!-- Custom scripts -->
   <script src="js/particles.js"></script>
   <script src="js/countdown.js"></script>
+  <script src="js/scratch.js"></script>
   <script src="js/script.js"></script>
 </body>
 </html>

@@ -1,92 +1,40 @@
 async function initParticles() {
   if (typeof tsParticles === 'undefined') return;
 
-  const goldStarsConfig = {
+  const sparkleConfig = {
     particles: {
-      number: { value: 60, density: { enable: true, area: 800 } },
-      color: { value: ["#D4AF37", "#FFD700", "#F5E6C8"] },
-      shape: { type: "circle" },
+      number: { value: 12, density: { enable: true, area: 1200 } },
+      color: { value: ['#C5A55A', '#E8D5A3', '#F5DFD0', '#D4A0A0'] },
+      shape: { type: 'circle' },
       opacity: {
-        value: { min: 0.1, max: 0.7 },
-        animation: { enable: true, speed: 0.8, minimumValue: 0.1, sync: false }
+        value: { min: 0.1, max: 0.35 },
+        animation: { enable: true, speed: 0.3, minimumValue: 0.05, sync: false }
       },
       size: {
-        value: { min: 1, max: 3 },
-        animation: { enable: true, speed: 2, minimumValue: 0.5, sync: false }
+        value: { min: 1.5, max: 4 },
+        animation: { enable: true, speed: 0.8, minimumValue: 1, sync: false }
       },
       move: {
         enable: true,
-        speed: 0.5,
-        direction: "none",
+        speed: 0.3,
+        direction: 'none',
         random: true,
         straight: false,
-        outModes: "out"
+        outModes: { default: 'out' }
       }
     },
     interactivity: {
       events: {
-        onHover: { enable: true, mode: "bubble" },
+        onHover: { enable: false },
         resize: true
-      },
-      modes: {
-        bubble: { distance: 100, size: 4, duration: 2, opacity: 0.8 }
-      }
-    },
-    detectRetina: true
-  };
-
-  const fallingGoldConfig = {
-    particles: {
-      number: { value: 40, density: { enable: true, area: 800 } },
-      color: { value: ["#D4AF37", "#FFD700", "#B8860B"] },
-      shape: { type: "circle" },
-      opacity: {
-        value: { min: 0.2, max: 0.8 },
-        animation: { enable: true, speed: 1, minimumValue: 0.1 }
-      },
-      size: { value: { min: 1, max: 4 } },
-      move: {
-        enable: true,
-        speed: 1.5,
-        direction: "bottom",
-        random: true,
-        straight: false,
-        outModes: { default: "out", top: "none" }
-      }
-    },
-    detectRetina: true
-  };
-
-  const sparkleConfig = {
-    particles: {
-      number: { value: 30 },
-      color: { value: ["#FFD700", "#FFFFFF", "#D4AF37"] },
-      shape: { type: "star" },
-      opacity: {
-        value: { min: 0, max: 1 },
-        animation: { enable: true, speed: 2, minimumValue: 0, sync: false }
-      },
-      size: {
-        value: { min: 1, max: 4 },
-        animation: { enable: true, speed: 3, minimumValue: 0.5 }
-      },
-      move: {
-        enable: true,
-        speed: 0.8,
-        direction: "none",
-        random: true,
-        outModes: "out"
       }
     },
     detectRetina: true
   };
 
   try {
-    await tsParticles.load("particles-opening", fallingGoldConfig);
-    await tsParticles.load("particles-title", goldStarsConfig);
-    await tsParticles.load("particles-date", sparkleConfig);
-    await tsParticles.load("particles-closing", goldStarsConfig);
+    await tsParticles.load('particles-sparkle', sparkleConfig);
   } catch (e) {
-    // particles are decorative, continue without them
+    // particles are decorative
   }
 }
