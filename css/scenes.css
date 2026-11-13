@@ -51,16 +51,6 @@
   opacity: 0.3;
 }
 
-.decor-floral-right {
-  top: 0;
-  right: 0;
-  height: 100%;
-  width: auto;
-  max-width: 30%;
-  object-fit: contain;
-  object-position: right;
-  opacity: 0.25;
-}
 
 
 /* ===================================
@@ -727,69 +717,77 @@
    SCENE 6: GUEST MESSAGE
    =================================== */
 
-.guest-content {
+/* Section: full viewport, centers the group */
+#scene-guest {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
   min-height: 100dvh;
-  gap: 1rem;
+  overflow: hidden;
+}
+
+/* Group: image + text side by side, vertically centered as a unit */
+.guest-group {
+  display: flex;
+  align-items: flex-start;
+}
+
+/* Image column: on top of text */
+.guest-image-col {
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.couple-dance-img {
+  display: block;
+  width: auto;
+  height: 92vh;
+  max-height: 1000px;
+  min-height: 500px;
+}
+
+/* Text column: overlaps image slightly, top-aligned so we control where each piece sits */
+.guest-text-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: -21%;
+  padding-top: 16vh;
+  gap: 3rem;
 }
 
 .guest-heading {
-  font-size: clamp(2.2rem, 6vw, 3rem);
+  font-size: clamp(2.6rem, 5vw, 3.5rem);
   color: var(--gold);
-}
-
-.guest-illustration {
-  width: clamp(140px, 35vw, 200px);
-}
-
-.bride-solo-img {
-  width: 100%;
-  height: auto;
-  display: block;
+  align-self: center;
 }
 
 .guest-message {
-  background: var(--overlay-card);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  padding: 1.5rem 2rem;
-  border-radius: 20px;
-  border: 1px solid var(--gold-light);
-  max-width: 350px;
+  text-align: center;
 }
 
 .guest-message p {
   font-family: var(--font-body);
-  font-size: clamp(1.05rem, 3vw, 1.2rem);
+  font-size: clamp(1.1rem, 3vw, 1.3rem);
   color: var(--text-dark);
-  line-height: 1.8;
+  line-height: 2;
   font-style: italic;
+  letter-spacing: 0.02em;
 }
 
-.guest-names {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.1rem;
+.guest-sign {
+  align-self: flex-end;
+  margin: 0;
 }
 
-.guest-separator {
-  color: var(--gold-light);
-  font-size: 1.5rem;
-  margin-bottom: 0.3rem;
-}
-
-.guest-names .script-font {
-  font-size: clamp(1.4rem, 4vw, 1.8rem);
+.guest-sign .script-font {
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
   color: var(--text-dark);
 }
 
-.guest-names .separator-amp {
-  font-size: clamp(1.2rem, 3vw, 1.5rem);
+.guest-sign .separator-amp {
   color: var(--gold-light);
 }
 
@@ -939,9 +937,28 @@
     padding: 10px 32px;
   }
 
-  .guest-message {
-    padding: 1.2rem 1.5rem;
-    margin: 0 0.5rem;
+  .guest-group {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .guest-image-col {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .couple-dance-img {
+    width: 100%;
+    height: auto;
+    max-height: none;
+    min-height: auto;
+  }
+
+  .guest-text-col {
+    margin-left: 0;
+    padding: 2rem 1.5rem;
+    gap: 1.2rem;
+    align-items: center;
   }
 
   .decor-corner-tl,
@@ -968,7 +985,4 @@
     display: none;
   }
 
-  .decor-floral-right {
-    opacity: 0.15;
-  }
 }
