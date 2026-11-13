@@ -893,23 +893,13 @@
   display: flex;
   gap: clamp(1.2rem, 3vw, 2rem);
   will-change: transform;
-  animation: gallery-scroll 45s linear infinite;
-}
-
-.marquee-reverse {
-  animation-direction: reverse;
-}
-
-@keyframes gallery-scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
 }
 
 /* Gallery item - CSS frame */
 .gallery-item {
   flex-shrink: 0;
   position: relative;
-  transition: transform 0.3s ease;
+  overflow: hidden;
 }
 
 .gallery-item:nth-child(6n+1) { transform: rotate(-2deg); }
@@ -918,6 +908,26 @@
 .gallery-item:nth-child(6n+4) { transform: rotate(2.5deg); }
 .gallery-item:nth-child(6n+5) { transform: rotate(-1.5deg); }
 .gallery-item:nth-child(6n+6) { transform: rotate(0.5deg); }
+
+/* Staggered entry — hidden by default, JS adds .gallery-entered */
+.gallery-marquee {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.gallery-marquee.marquee-reverse {
+  transform: translateX(40px);
+}
+
+.gallery-marquee.gallery-entered {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.gallery-marquee:nth-child(2) {
+  transition-delay: 0.3s;
+}
 
 .frame-inner {
   width: 100%;
