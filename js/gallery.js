@@ -96,7 +96,10 @@
     if (photos.length > 0 && emptyEl) emptyEl.classList.remove('visible');
 
     var rowH = getRowHeight();
-    var speeds = [80, 70];
+    var speeds = [];
+    for (var s = 0; s < NUM_ROWS; s++) {
+      speeds.push(60 + Math.floor(Math.random() * 30));
+    }
     var rows = [];
 
     function shuffle(arr) {
