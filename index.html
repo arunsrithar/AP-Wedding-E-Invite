@@ -40,21 +40,17 @@
     <img src="images/corner-paisley.png" class="decor decor-corner-br" alt="" loading="lazy">
 
     <div class="scene-content cover-content">
-      <!-- Ornate oval frame with monogram inside -->
+      <!-- Monogram in oval frame -->
       <div class="monogram-wrapper" data-aos="zoom-in" data-aos-duration="1200">
         <img src="images/frame-oval.png" class="monogram-frame-img" alt="Ornate frame">
         <div class="monogram-initials">
-          <span class="monogram-letter">G</span>
-          <span class="monogram-ampersand">&amp;</span>
-          <span class="monogram-letter">B</span>
+          <img src="images/AP Monogram.svg" class="monogram-svg" alt="AP Monogram">
+          <p class="cover-label script-font">Wedding Celebration</p>
+          <button class="open-invitation-btn" id="open-invitation">
+            OPEN INVITATION
+          </button>
         </div>
       </div>
-
-      <p class="cover-label script-font" data-aos="fade-up" data-aos-delay="400">Wedding Celebration</p>
-
-      <button class="open-invitation-btn" id="open-invitation" data-aos="fade-up" data-aos-delay="600">
-        OPEN INVITATION
-      </button>
     </div>
   </section>
 
@@ -64,7 +60,8 @@
   <!-- ============================================ -->
   <section id="scene-couple" class="scene">
     <!-- Floral corners -->
-    <img src="images/floral-corners.png" class="decor decor-floral-corners" alt="" loading="lazy">
+    <img src="images/floral-corners-top.png" class="decor decor-floral-top" alt="" loading="lazy">
+    <img src="images/floral-corners-bottom.png" class="decor decor-floral-bottom" alt="" loading="lazy">
 
     <div class="scene-content couple-content">
       <p class="couple-invocation" data-aos="fade-up">
@@ -77,18 +74,18 @@
       </div>
 
       <div class="couple-details" data-aos="fade-up" data-aos-delay="300">
-        <div class="person bride-info">
-          <h2 class="person-name script-font">Bride Name</h2>
-          <p class="person-parents">Daughter of Mr. Father Name<br>&amp; Mrs. Mother Name</p>
+        <div class="person groom-info">
+          <h2 class="person-name script-font">Groom Name</h2>
+          <p class="person-parents">Son of Mr. Father Name<br>&amp; Mrs. Mother Name</p>
         </div>
 
         <div class="couple-separator">
           <span class="separator-amp script-font">&amp;</span>
         </div>
 
-        <div class="person groom-info">
-          <h2 class="person-name script-font">Groom Name</h2>
-          <p class="person-parents">Son of Mr. Father Name<br>&amp; Mrs. Mother Name</p>
+        <div class="person bride-info">
+          <h2 class="person-name script-font">Bride Name</h2>
+          <p class="person-parents">Daughter of Mr. Father Name<br>&amp; Mrs. Mother Name</p>
         </div>
       </div>
     </div>
@@ -145,33 +142,41 @@
   <!-- SCENE 4: Engagement Event                    -->
   <!-- ============================================ -->
   <section id="scene-engagement" class="scene">
-    <div class="scene-content event-content">
-      <h2 class="event-title script-font" data-aos="fade-up">Engagement</h2>
-      <p class="event-subtitle" data-aos="fade-up" data-aos-delay="100">Nichayathartham</p>
+    <div class="engagement-layout">
+      <!-- Left: Mandap with texts centered inside -->
+      <div class="mandap-fullscreen">
+        <!-- Title and details over the mandap -->
+        <div class="mandap-back-text" data-aos="fade-up">
+          <span class="ornament-line">&#10045; &#10045; &#10045;</span>
+          <h2 class="event-title script-font">Engagement</h2>
+          <div class="title-divider">
+            <span class="divider-dot"></span>
+            <span class="divider-line"></span>
+            <span class="divider-dot"></span>
+          </div>
+          <p class="event-subtitle">Nichayathartham</p>
+          <span class="ornament-line bottom">&#10045; &#10045; &#10045;</span>
 
-      <!-- Mandap illustration -->
-      <div class="event-illustration" data-aos="zoom-in" data-aos-delay="150">
-        <img src="images/mandap.png" alt="Wedding mandap" class="event-scene-img">
-      </div>
+          <div class="engagement-info" data-aos="fade-up" data-aos-delay="200">
+            <div class="engagement-info-row">
+              <span class="engagement-info-icon">📅</span>
+              <span>Thursday, DD Month YYYY</span>
+            </div>
+            <div class="engagement-info-row">
+              <span class="engagement-info-icon">🕐</span>
+              <span>00:00 AM</span>
+            </div>
+            <div class="engagement-info-row">
+              <span class="engagement-info-icon">📍</span>
+              <span>Venue Name, City</span>
+            </div>
+            <a href="#" class="engagement-map-btn" id="engagement-map-btn" target="_blank" rel="noopener">
+              OPEN MAP
+            </a>
+          </div>
+        </div>
 
-      <div class="event-details" data-aos="fade-up" data-aos-delay="200">
-        <div class="event-info-row">
-          <span class="event-icon">📅</span>
-          <span>Thursday, DD Month YYYY</span>
-        </div>
-        <div class="event-info-row">
-          <span class="event-icon">🕐</span>
-          <span>00:00 AM</span>
-        </div>
-        <div class="event-info-row">
-          <span class="event-icon">📍</span>
-          <span>Venue Name, City</span>
-        </div>
-      </div>
-
-      <div class="venue-actions" data-aos="fade-up" data-aos-delay="300">
-        <a href="#" class="map-btn" id="engagement-map-btn" target="_blank" rel="noopener">Open Map</a>
-        <div class="qr-container" id="engagement-qr"></div>
+        <img src="images/mandap.png" alt="Wedding mandap" class="mandap-bg-img">
       </div>
     </div>
   </section>
@@ -205,9 +210,13 @@
         </div>
       </div>
 
-      <div class="venue-actions" data-aos="fade-up" data-aos-delay="300">
-        <a href="#" class="map-btn" id="wedding-map-btn" target="_blank" rel="noopener">Open Map</a>
+      <div class="venue-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="venue-card-glow"></div>
         <div class="qr-container" id="wedding-qr"></div>
+        <p class="venue-card-hint">Scan the QR Code or proceed via button.</p>
+        <a href="#" class="map-btn" id="wedding-map-btn" target="_blank" rel="noopener">
+          Open Map <span class="btn-arrow">&rarr;</span>
+        </a>
       </div>
     </div>
   </section>
