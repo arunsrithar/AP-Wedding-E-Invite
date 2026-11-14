@@ -51,8 +51,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // ========================================
   // QR CODES
   // ========================================
-  const engagementMapUrl = 'https://maps.google.com/?q=Venue+Name+City';
-  const weddingMapUrl = 'https://maps.google.com/?q=Venue+Name+City';
+  const engagementMapUrl = 'https://maps.app.goo.gl/dgQ7LXW3ZknZo4Yt7';
+  const weddingMapUrl = 'https://maps.app.goo.gl/dgQ7LXW3ZknZo4Yt7';
 
   function generateQR(containerId, url) {
     const el = document.getElementById(containerId);

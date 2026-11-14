@@ -1,6 +1,6 @@
 function initCountdown() {
   // PLACEHOLDER DATE — replace with actual wedding date
-  const weddingDate = new Date('2025-12-31T10:00:00');
+  const weddingDate = new Date('2026-12-13T07:00:00');
 
   const daysEl = document.getElementById('countdown-days');
   const hoursEl = document.getElementById('countdown-hours');
