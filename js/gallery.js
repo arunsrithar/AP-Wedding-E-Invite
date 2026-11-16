@@ -1,6 +1,5 @@
 (function () {
   var GALLERY_DIR = 'images/gallery/';
-  var IMAGE_EXTS = ['.jpg', '.jpeg', '.png', '.JPG', '.JPEG', '.PNG'];
   var NUM_ROWS = 2;
   var ITEMS_PER_ROW = 8;
 
@@ -11,42 +10,24 @@
     return window.innerWidth <= 768 ? ROW_HEIGHT_MOBILE : ROW_HEIGHT;
   }
 
+  var GALLERY_FILES = [
+    '1.jpg','2.jpg','3.jpg','4.jpeg','5.jpeg','6.png',
+    '7.jpeg','8.jpg','9.jpeg','10.jpg','11.jpg','12.jpg','13.jpeg'
+  ];
+
   function probePhotos() {
-    return new Promise(function (resolve) {
-      var found = [];
-      var i = 1;
-      var misses = 0;
-
-      function tryNumber() {
-        tryExt(i, 0);
-      }
-
-      function tryExt(num, extIdx) {
-        if (extIdx >= IMAGE_EXTS.length) {
-          misses++;
-          if (misses >= 3) {
-            resolve(found);
-          } else {
-            i++;
-            tryNumber();
-          }
-          return;
-        }
+    return Promise.all(GALLERY_FILES.map(function (name) {
+      return new Promise(function (resolve) {
         var img = new Image();
-        var src = GALLERY_DIR + num + IMAGE_EXTS[extIdx];
+        var src = GALLERY_DIR + name;
         img.onload = function () {
-          found.push({ src: src, nw: img.naturalWidth, nh: img.naturalHeight });
-          misses = 0;
-          i++;
-          tryNumber();
+          resolve({ src: src, nw: img.naturalWidth, nh: img.naturalHeight });
         };
-        img.onerror = function () {
-          tryExt(num, extIdx + 1);
-        };
+        img.onerror = function () { resolve(null); };
         img.src = src;
-      }
-
-      tryNumber();
+      });
+    })).then(function (results) {
+      return results.filter(Boolean);
     });
   }
 
