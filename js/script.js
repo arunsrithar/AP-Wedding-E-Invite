@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ========================================
-  // PRELOADER
+  // PRELOADER — only wait for cover-scene images, not everything
   // ========================================
   let coverEntryFired = false;
 
@@ -19,13 +19,29 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
       document.getElementById('preloader').classList.add('hidden');
       triggerCoverEntry();
-    }, 1200);
+    }, 400);
   }
 
-  if (document.readyState === 'complete') {
+  var coverImages = document.querySelectorAll('#scene-cover img');
+  var coverLoaded = 0;
+  var coverTotal = coverImages.length;
+
+  function checkCoverReady() {
+    coverLoaded++;
+    if (coverLoaded >= coverTotal) hidePreloader();
+  }
+
+  if (coverTotal === 0) {
     hidePreloader();
   } else {
-    window.addEventListener('load', hidePreloader);
+    coverImages.forEach(function(img) {
+      if (img.complete) {
+        checkCoverReady();
+      } else {
+        img.addEventListener('load', checkCoverReady);
+        img.addEventListener('error', checkCoverReady);
+      }
+    });
   }
 
   // ========================================
