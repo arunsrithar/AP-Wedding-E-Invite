@@ -81,8 +81,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
-  min-height: 100dvh;
+  height: 100%;
   gap: 0.5rem;
   max-width: 780px;
 }
@@ -147,8 +146,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
-  min-height: 100dvh;
+  height: 100%;
   gap: 0.8rem;
 }
 
@@ -213,8 +211,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
-  min-height: 100dvh;
+  height: 100%;
   gap: 1.2rem;
 }
 
@@ -431,7 +428,7 @@
 
 .mandap-back-text {
   position: absolute;
-  top: 28%;
+  top: 26%;
   left: 0;
   right: 0;
   z-index: 2;
@@ -551,6 +548,27 @@
 @keyframes dot-glow {
   0%, 100% { opacity: 0.5; box-shadow: 0 0 4px rgba(197, 165, 90, 0.3); }
   50% { opacity: 1; box-shadow: 0 0 10px rgba(197, 165, 90, 0.7); }
+}
+
+#scene-engagement .ornament-line,
+#scene-engagement .title-divider,
+#scene-engagement .divider-dot,
+#scene-engagement .mandap-back-text .event-subtitle,
+#scene-wedding .ornament-line,
+#scene-wedding .title-divider,
+#scene-wedding .divider-dot,
+#scene-wedding .wedding-title-group .event-subtitle,
+#scene-gallery .gallery-ornament,
+#scene-gallery .title-divider,
+#scene-gallery .divider-dot {
+  animation: none;
+}
+
+#scene-gallery .gallery-marquee,
+#scene-gallery .gallery-marquee.gallery-entered {
+  opacity: 1;
+  transform: none;
+  transition: none;
 }
 
 .mandap-bg-img {
@@ -788,8 +806,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
-  min-height: 100dvh;
   overflow: hidden;
 }
 
@@ -864,8 +880,6 @@
 
 .gallery-scene {
   flex-direction: column;
-  min-height: 100vh;
-  min-height: 100dvh;
   padding: 4rem 0 3rem;
   gap: 2rem;
   position: relative;
@@ -1141,8 +1155,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
-  min-height: 100dvh;
+  height: 100%;
   gap: 0.8rem;
 }
 
@@ -1230,12 +1243,13 @@
 
   .engagement-layout {
     flex-direction: column;
-    height: auto;
+    height: 100vh;
+    height: 100dvh;
   }
 
   .mandap-fullscreen {
-    min-height: auto;
-    height: auto;
+    min-height: 100%;
+    height: 100%;
     flex: none;
     width: 100%;
   }

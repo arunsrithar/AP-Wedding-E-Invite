@@ -31,7 +31,6 @@
 }
 
 html {
-  scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
 }
 
@@ -115,12 +114,13 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 .scene {
   position: relative;
-  min-height: 100vh;
-  min-height: 100dvh;
+  height: 100vh;
+  height: 100dvh;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  will-change: transform;
 }
 
 .scene-content {
