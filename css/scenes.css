@@ -1264,12 +1264,16 @@
     height: 100%;
   }
 
+  .mandap-bg-img {
+    object-fit: cover;
+  }
+
   .wedding-bg-img {
     object-fit: cover;
   }
 
   .wedding-title-group {
-    top: 15%;
+    top: 36%;
     gap: 0.4rem;
   }
 
@@ -1278,7 +1282,7 @@
   }
 
   .wedding-info {
-    top: 38%;
+    top: 54%;
     gap: 0.6rem;
   }
 
