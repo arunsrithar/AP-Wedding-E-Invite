@@ -436,7 +436,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (openBtn) {
     openBtn.addEventListener('click', () => {
       gsap.to(window, {
-        scrollTo: { y: window.innerHeight, autoKill: false },
+        scrollTo: { y: 3970, autoKill: false },
         duration: 1.5,
         ease: 'sine.inOut'
       });
