@@ -435,8 +435,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const openBtn = document.getElementById('open-invitation');
   if (openBtn) {
     openBtn.addEventListener('click', () => {
+      var coupleArchCenter = window.innerHeight * 3.5;
       gsap.to(window, {
-        scrollTo: { y: 3970, autoKill: false },
+        scrollTo: { y: coupleArchCenter, autoKill: false },
         duration: 1.5,
         ease: 'sine.inOut'
       });
