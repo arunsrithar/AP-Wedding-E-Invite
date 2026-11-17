@@ -1254,6 +1254,29 @@
     width: 100%;
   }
 
+  .mandap-back-text {
+    top: 36%;
+    gap: 0.4rem;
+  }
+
+  .mandap-back-text .event-title {
+    font-size: clamp(2rem, 8vw, 3rem);
+  }
+
+  .engagement-info {
+    gap: 0.6rem;
+    margin-top: 0.8rem;
+  }
+
+  .engagement-info-row {
+    font-size: clamp(0.85rem, 2.5vw, 1rem);
+  }
+
+  .engagement-map-btn {
+    margin-top: 0.8rem;
+    padding: 10px 32px;
+  }
+
   .wedding-layout {
     height: 100vh;
     height: 100dvh;
