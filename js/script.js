@@ -91,13 +91,13 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!coverTl) return;
 
     coverTl.to('.decor-corner-tl', {
-      xPercent: -100, opacity: 0, duration: 1, ease: 'none'
+      xPercent: -100, opacity: 0, duration: 2.5, ease: 'none'
     }, 0)
     .to('.decor-corner-br', {
-      xPercent: 100, opacity: 0, duration: 1, ease: 'none'
+      xPercent: 100, opacity: 0, duration: 2.5, ease: 'none'
     }, 0)
     .to('.monogram-wrapper', {
-      scale: 0.5, opacity: 0, duration: 1, ease: 'none'
+      scale: 0.5, opacity: 0, duration: 2.5, ease: 'none'
     }, 0);
   }
 
@@ -125,7 +125,6 @@ document.addEventListener('DOMContentLoaded', () => {
       { y: 30, opacity: 0 },
       { y: 0, opacity: 1, duration: 0.7, ease: 'none', immediateRender: false }, 0.3)
 
-    // EXIT (1.5 → 2.5): illustration exits right, florals reverse out, text fades
     .fromTo('.couple-illustration',
       { xPercent: 0, opacity: 1 },
       {
@@ -170,7 +169,6 @@ document.addEventListener('DOMContentLoaded', () => {
       { y: 20, opacity: 0 },
       { y: 0, opacity: 1, duration: 0.5, ease: 'none', immediateRender: false }, 0.4)
 
-    // EXIT (1.5 → 2.3): reverse out
     .fromTo('.countdown-container',
       { y: 0, opacity: 1 },
       { y: 20, opacity: 0, duration: 0.5, ease: 'none', immediateRender: false }, 1.5)
@@ -212,7 +210,6 @@ document.addEventListener('DOMContentLoaded', () => {
       { y: 30, opacity: 0 },
       { y: 0, opacity: 1, duration: 0.5, ease: 'none', immediateRender: false }, 0.6)
 
-    // EXIT (1.5 → 2.3): reverse out
     .fromTo('.engagement-info',
       { y: 0, opacity: 1 },
       { y: 30, opacity: 0, duration: 0.4, ease: 'none', immediateRender: false }, 1.5)
@@ -257,7 +254,6 @@ document.addEventListener('DOMContentLoaded', () => {
       { y: 30, opacity: 0 },
       { y: 0, opacity: 1, duration: 0.5, ease: 'none', immediateRender: false }, 0.6)
 
-    // EXIT (1.5 → 2.3): reverse out
     .fromTo('.wedding-info',
       { y: 0, opacity: 1 },
       { y: 30, opacity: 0, duration: 0.4, ease: 'none', immediateRender: false }, 1.5)
@@ -296,7 +292,6 @@ document.addEventListener('DOMContentLoaded', () => {
       { opacity: 0 },
       { opacity: 1, duration: 0.4, ease: 'none', immediateRender: false }, 0.6)
 
-    // EXIT (1.5 → 2.3): reverse out
     .fromTo('.guest-sign',
       { opacity: 1 },
       { opacity: 0, duration: 0.3, ease: 'none', immediateRender: false }, 1.5)
@@ -335,7 +330,6 @@ document.addEventListener('DOMContentLoaded', () => {
       { y: 30, opacity: 0 },
       { y: 0, opacity: 1, duration: 0.5, ease: 'none', immediateRender: false }, 0.4)
 
-    // EXIT (1.5 → 2.1): reverse out
     .fromTo('#gallery-wall, #gallery-empty',
       { y: 0, opacity: 1 },
       { y: 30, opacity: 0, duration: 0.4, ease: 'none', immediateRender: false }, 1.5)
@@ -480,110 +474,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Overlay covers the scroll gap between cover and couple sections
-  var coupleOverlay = document.createElement('div');
-  coupleOverlay.style.cssText = 'position:fixed;inset:0;z-index:10;background:#FFFDF7;display:none;pointer-events:none;';
-  document.body.appendChild(coupleOverlay);
-
-  ScrollTrigger.create({
-    trigger: '#scene-couple',
-    start: 'top bottom',
-    end: 'top top',
-    onEnter: function() { coupleOverlay.style.display = ''; },
-    onLeaveBack: function() { coupleOverlay.style.display = 'none'; },
-    onLeave: function() { coupleOverlay.style.display = 'none'; },
-    onEnterBack: function() { coupleOverlay.style.display = ''; },
-  });
-
-  // Overlay covers the scroll gap between couple and date sections
-  var dateOverlay = document.createElement('div');
-  dateOverlay.style.cssText = 'position:fixed;inset:0;z-index:10;background:#FFFDF7;display:none;pointer-events:none;';
-  document.body.appendChild(dateOverlay);
-
-  ScrollTrigger.create({
-    trigger: '#scene-date',
-    start: 'top bottom',
-    end: 'top top',
-    onEnter: function() { dateOverlay.style.display = ''; },
-    onLeaveBack: function() { dateOverlay.style.display = 'none'; },
-    onLeave: function() { dateOverlay.style.display = 'none'; },
-    onEnterBack: function() { dateOverlay.style.display = ''; },
-  });
-
-  // Overlay covers the scroll gap between date and engagement sections
-  var engOverlay = document.createElement('div');
-  engOverlay.style.cssText = 'position:fixed;inset:0;z-index:10;background:#FFFDF7;display:none;pointer-events:none;';
-  document.body.appendChild(engOverlay);
-
-  ScrollTrigger.create({
-    trigger: '#scene-engagement',
-    start: 'top bottom',
-    end: 'top top',
-    onEnter: function() { engOverlay.style.display = ''; },
-    onLeaveBack: function() { engOverlay.style.display = 'none'; },
-    onLeave: function() { engOverlay.style.display = 'none'; },
-    onEnterBack: function() { engOverlay.style.display = ''; },
-  });
-
-  // Overlay covers the scroll gap between engagement and wedding sections
-  var wedOverlay = document.createElement('div');
-  wedOverlay.style.cssText = 'position:fixed;inset:0;z-index:10;background:#FFFDF7;display:none;pointer-events:none;';
-  document.body.appendChild(wedOverlay);
-
-  ScrollTrigger.create({
-    trigger: '#scene-wedding',
-    start: 'top bottom',
-    end: 'top top',
-    onEnter: function() { wedOverlay.style.display = ''; },
-    onLeaveBack: function() { wedOverlay.style.display = 'none'; },
-    onLeave: function() { wedOverlay.style.display = 'none'; },
-    onEnterBack: function() { wedOverlay.style.display = ''; },
-  });
-
-  // Overlay covers the scroll gap between wedding and guest sections
-  var guestOverlay = document.createElement('div');
-  guestOverlay.style.cssText = 'position:fixed;inset:0;z-index:10;background:#FFFDF7;display:none;pointer-events:none;';
-  document.body.appendChild(guestOverlay);
-
-  ScrollTrigger.create({
-    trigger: '#scene-guest',
-    start: 'top bottom',
-    end: 'top top',
-    onEnter: function() { guestOverlay.style.display = ''; },
-    onLeaveBack: function() { guestOverlay.style.display = 'none'; },
-    onLeave: function() { guestOverlay.style.display = 'none'; },
-    onEnterBack: function() { guestOverlay.style.display = ''; },
-  });
-
-  // Overlay covers the scroll gap between guest and gallery sections
-  var galOverlay = document.createElement('div');
-  galOverlay.style.cssText = 'position:fixed;inset:0;z-index:10;background:#FFFDF7;display:none;pointer-events:none;';
-  document.body.appendChild(galOverlay);
-
-  ScrollTrigger.create({
-    trigger: '#scene-gallery',
-    start: 'top bottom',
-    end: 'top top',
-    onEnter: function() { galOverlay.style.display = ''; },
-    onLeaveBack: function() { galOverlay.style.display = 'none'; },
-    onLeave: function() { galOverlay.style.display = 'none'; },
-    onEnterBack: function() { galOverlay.style.display = ''; },
-  });
-
-  // Overlay covers the scroll gap between gallery and thankyou sections
-  var tyOverlay = document.createElement('div');
-  tyOverlay.style.cssText = 'position:fixed;inset:0;z-index:10;background:#FFFDF7;display:none;pointer-events:none;';
-  document.body.appendChild(tyOverlay);
-
-  ScrollTrigger.create({
-    trigger: '#scene-thankyou',
-    start: 'top bottom',
-    end: 'top top',
-    onEnter: function() { tyOverlay.style.display = ''; },
-    onLeaveBack: function() { tyOverlay.style.display = 'none'; },
-    onLeave: function() { tyOverlay.style.display = 'none'; },
-    onEnterBack: function() { tyOverlay.style.display = ''; },
-  });
 
   // ========================================
   // "OPEN INVITATION" BUTTON (shortcut — auto-scrolls to couple section)
@@ -591,16 +481,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const openBtn = document.getElementById('open-invitation');
   if (openBtn) {
     openBtn.addEventListener('click', () => {
-      const coupleTrigger = ScrollTrigger.getAll().find(
-        st => st.trigger && st.trigger.id === 'scene-couple'
-      );
-      if (coupleTrigger) {
-        gsap.to(window, {
-          scrollTo: { y: coupleTrigger.start, autoKill: false },
-          duration: 1.5,
-          ease: 'sine.inOut'
-        });
-      }
+      gsap.to(window, {
+        scrollTo: { y: window.innerHeight, autoKill: false },
+        duration: 1.5,
+        ease: 'sine.inOut'
+      });
     });
   }
 
@@ -639,8 +524,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const backToTop = document.getElementById('back-to-top');
   if (backToTop) {
     ScrollTrigger.create({
-      trigger: '#scene-thankyou',
-      start: 'top 80%',
+      trigger: '#scenes-wrapper',
+      start: () => '+=' + (window.innerHeight * 7),
+      end: 'max',
       onEnter: () => backToTop.classList.add('visible'),
       onLeaveBack: () => backToTop.classList.remove('visible')
     });
