@@ -581,58 +581,6 @@
   z-index: 1;
 }
 
-.engagement-info {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.2rem;
-  margin-top: 1.5rem;
-}
-
-.engagement-info-row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.6rem;
-  font-family: var(--font-body);
-  font-size: clamp(1rem, 2.8vw, 1.2rem);
-  font-weight: 500;
-  color: #4A2D3A;
-  text-shadow:
-    0 0 20px rgba(255, 255, 255, 0.95),
-    0 0 40px rgba(255, 255, 255, 0.6);
-  letter-spacing: 0.02em;
-}
-
-.engagement-info-icon {
-  font-size: 1.1rem;
-  flex-shrink: 0;
-}
-
-.engagement-map-btn {
-  display: inline-block;
-  font-family: var(--font-ui);
-  font-size: clamp(0.65rem, 1.5vw, 0.78rem);
-  font-weight: 500;
-  letter-spacing: 0.2em;
-  color: #6B3A4A;
-  background: transparent;
-  border: 1.5px solid #A3677A;
-  padding: clamp(12px, 2vw, 16px) clamp(40px, 8vw, 64px);
-  border-radius: 30px;
-  transition: all 0.3s ease;
-  margin-top: 1.5rem;
-  text-decoration: none;
-  text-shadow: none;
-}
-
-.engagement-map-btn:hover {
-  background: #7B4B5A;
-  border-color: #7B4B5A;
-  color: var(--white);
-}
-
-
 /* ===================================
    SCENE 4 & 5: EVENTS (shared)
    =================================== */
@@ -650,6 +598,63 @@
   letter-spacing: 0.05em;
 }
 
+.event-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.event-info-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 2.8vw, 1.2rem);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.event-info-icon {
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.event-map-btn {
+  display: inline-block;
+  font-family: var(--font-ui);
+  font-size: clamp(0.65rem, 1.5vw, 0.78rem);
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  color: #6B3A4A;
+  background: transparent;
+  border: 1.5px solid #A3677A;
+  padding: clamp(12px, 2vw, 16px) clamp(40px, 8vw, 64px);
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  margin-top: 1.5rem;
+  text-decoration: none;
+  text-shadow: none;
+}
+
+.event-map-btn:hover {
+  background: #7B4B5A;
+  border-color: #7B4B5A;
+  color: var(--white);
+}
+
+/* Engagement color overrides */
+.engagement-info {
+  margin-top: 1.5rem;
+}
+
+.engagement-info .event-info-row {
+  color: #4A2D3A;
+  text-shadow:
+    0 0 20px rgba(255, 255, 255, 0.95),
+    0 0 40px rgba(255, 255, 255, 0.6);
+}
 
 /* ===================================
    SCENE 5: WEDDING (Full-screen arch)
@@ -748,52 +753,12 @@
   left: 0;
   right: 0;
   z-index: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.2rem;
 }
 
-.wedding-info-row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.6rem;
-  font-family: var(--font-body);
-  font-size: clamp(1rem, 2.8vw, 1.2rem);
-  font-weight: 500;
+.wedding-info .event-info-row {
   color: #3D1F2B;
   text-shadow:
     0 1px 6px rgba(255, 255, 255, 0.8);
-  letter-spacing: 0.02em;
-}
-
-.wedding-info-icon {
-  font-size: 1.1rem;
-  flex-shrink: 0;
-}
-
-.wedding-map-btn {
-  display: inline-block;
-  font-family: var(--font-ui);
-  font-size: clamp(0.65rem, 1.5vw, 0.78rem);
-  font-weight: 500;
-  letter-spacing: 0.2em;
-  color: #6B3A4A;
-  background: transparent;
-  border: 1.5px solid #A3677A;
-  padding: clamp(12px, 2vw, 16px) clamp(40px, 8vw, 64px);
-  border-radius: 30px;
-  transition: all 0.3s ease;
-  margin-top: 1.5rem;
-  text-decoration: none;
-  text-shadow: none;
-}
-
-.wedding-map-btn:hover {
-  background: #7B4B5A;
-  border-color: #7B4B5A;
-  color: var(--white);
 }
 
 
@@ -1197,6 +1162,35 @@
    RESPONSIVE
    =================================== */
 
+@media (max-width: 1024px) {
+  .guest-group {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .guest-image-col {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .couple-dance-img {
+    width: 85%;
+    max-width: 500px;
+    height: auto;
+    max-height: 50vh;
+    min-height: auto;
+    object-fit: contain;
+  }
+
+  .guest-text-col {
+    margin-left: 0;
+    padding: 1rem 2rem 1.5rem;
+    gap: 1rem;
+    align-items: center;
+  }
+}
+
 @media (max-width: 768px) {
   .monogram-wrapper {
     width: min(95vw, 450px);
@@ -1263,16 +1257,19 @@
     font-size: clamp(2rem, 8vw, 3rem);
   }
 
-  .engagement-info {
+  .event-info {
     gap: 0.6rem;
+  }
+
+  .engagement-info {
     margin-top: 0.8rem;
   }
 
-  .engagement-info-row {
+  .event-info-row {
     font-size: clamp(0.85rem, 2.5vw, 1rem);
   }
 
-  .engagement-map-btn {
+  .event-map-btn {
     margin-top: 0.8rem;
     padding: 10px 32px;
   }
@@ -1287,10 +1284,7 @@
     height: 100%;
   }
 
-  .mandap-bg-img {
-    object-fit: cover;
-  }
-
+  .mandap-bg-img,
   .wedding-bg-img {
     object-fit: cover;
   }
@@ -1306,16 +1300,6 @@
 
   .wedding-info {
     top: 54%;
-    gap: 0.6rem;
-  }
-
-  .wedding-info-row {
-    font-size: clamp(0.85rem, 2.5vw, 1rem);
-  }
-
-  .wedding-map-btn {
-    margin-top: 0.8rem;
-    padding: 10px 32px;
   }
 
   .guest-group {

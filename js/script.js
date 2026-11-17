@@ -186,90 +186,46 @@ document.addEventListener('DOMContentLoaded', () => {
       { xPercent: 100, opacity: 0, duration: 0.6, ease: 'none', immediateRender: false }, 1.7);
   }
 
-  function addEngagementAnimationsToScroll() {
-    var engTl = SceneManager.getTimeline('scene-engagement');
-    if (!engTl) return;
+  function addEventAnimationsToScroll(sceneId, bgSelector, infoSelector) {
+    var tl = SceneManager.getTimeline(sceneId);
+    if (!tl) return;
+    var prefix = '#' + sceneId + ' ';
 
-    // ENTRY (0 → 1.0): mandap fades in, then title/content stagger
-    engTl.fromTo('.mandap-bg-img',
+    tl.fromTo(bgSelector,
       { opacity: 0, scale: 1.05 },
       { opacity: 1, scale: 1, duration: 0.7, ease: 'none', immediateRender: false }, 0)
-    .fromTo('#scene-engagement .event-title',
+    .fromTo(prefix + '.event-title',
       { y: -30, opacity: 0 },
       { y: 0, opacity: 1, duration: 0.5, ease: 'none', immediateRender: false }, 0.3)
-    .fromTo('#scene-engagement .ornament-line',
+    .fromTo(prefix + '.ornament-line',
       { opacity: 0 },
       { opacity: 1, duration: 0.3, ease: 'none', immediateRender: false }, 0.4)
-    .fromTo('#scene-engagement .title-divider',
+    .fromTo(prefix + '.title-divider',
       { opacity: 0, scaleX: 0 },
       { opacity: 1, scaleX: 1, duration: 0.4, ease: 'none', immediateRender: false }, 0.45)
-    .fromTo('#scene-engagement .event-subtitle',
+    .fromTo(prefix + '.event-subtitle',
       { y: -20, opacity: 0 },
       { y: 0, opacity: 1, duration: 0.4, ease: 'none', immediateRender: false }, 0.5)
-    .fromTo('.engagement-info',
+    .fromTo(infoSelector,
       { y: 30, opacity: 0 },
       { y: 0, opacity: 1, duration: 0.5, ease: 'none', immediateRender: false }, 0.6)
 
-    .fromTo('.engagement-info',
+    .fromTo(infoSelector,
       { y: 0, opacity: 1 },
       { y: 30, opacity: 0, duration: 0.4, ease: 'none', immediateRender: false }, 1.5)
-    .fromTo('#scene-engagement .event-subtitle',
+    .fromTo(prefix + '.event-subtitle',
       { y: 0, opacity: 1 },
       { y: -20, opacity: 0, duration: 0.3, ease: 'none', immediateRender: false }, 1.55)
-    .fromTo('#scene-engagement .title-divider',
+    .fromTo(prefix + '.title-divider',
       { opacity: 1, scaleX: 1 },
       { opacity: 0, scaleX: 0, duration: 0.3, ease: 'none', immediateRender: false }, 1.6)
-    .fromTo('#scene-engagement .event-title',
+    .fromTo(prefix + '.event-title',
       { y: 0, opacity: 1 },
       { y: -30, opacity: 0, duration: 0.4, ease: 'none', immediateRender: false }, 1.6)
-    .fromTo('#scene-engagement .ornament-line',
+    .fromTo(prefix + '.ornament-line',
       { opacity: 1 },
       { opacity: 0, duration: 0.3, ease: 'none', immediateRender: false }, 1.65)
-    .fromTo('.mandap-bg-img',
-      { opacity: 1, scale: 1 },
-      { opacity: 0, scale: 1.05, duration: 0.6, ease: 'none', immediateRender: false }, 1.7);
-  }
-
-  function addWeddingAnimationsToScroll() {
-    var wedTl = SceneManager.getTimeline('scene-wedding');
-    if (!wedTl) return;
-
-    // ENTRY (0 → 1.0): arch fades in, then title/content stagger
-    wedTl.fromTo('.wedding-bg-img',
-      { opacity: 0, scale: 1.05 },
-      { opacity: 1, scale: 1, duration: 0.7, ease: 'none', immediateRender: false }, 0)
-    .fromTo('#scene-wedding .event-title',
-      { y: -30, opacity: 0 },
-      { y: 0, opacity: 1, duration: 0.5, ease: 'none', immediateRender: false }, 0.3)
-    .fromTo('#scene-wedding .ornament-line',
-      { opacity: 0 },
-      { opacity: 1, duration: 0.3, ease: 'none', immediateRender: false }, 0.4)
-    .fromTo('#scene-wedding .title-divider',
-      { opacity: 0, scaleX: 0 },
-      { opacity: 1, scaleX: 1, duration: 0.4, ease: 'none', immediateRender: false }, 0.45)
-    .fromTo('#scene-wedding .event-subtitle',
-      { y: -20, opacity: 0 },
-      { y: 0, opacity: 1, duration: 0.4, ease: 'none', immediateRender: false }, 0.5)
-    .fromTo('.wedding-info',
-      { y: 30, opacity: 0 },
-      { y: 0, opacity: 1, duration: 0.5, ease: 'none', immediateRender: false }, 0.6)
-
-    .fromTo('.wedding-info',
-      { y: 0, opacity: 1 },
-      { y: 30, opacity: 0, duration: 0.4, ease: 'none', immediateRender: false }, 1.5)
-    .fromTo('#scene-wedding .event-subtitle',
-      { y: 0, opacity: 1 },
-      { y: -20, opacity: 0, duration: 0.3, ease: 'none', immediateRender: false }, 1.55)
-    .fromTo('#scene-wedding .title-divider',
-      { opacity: 1, scaleX: 1 },
-      { opacity: 0, scaleX: 0, duration: 0.3, ease: 'none', immediateRender: false }, 1.6)
-    .fromTo('#scene-wedding .event-title',
-      { y: 0, opacity: 1 },
-      { y: -30, opacity: 0, duration: 0.4, ease: 'none', immediateRender: false }, 1.6)
-    .fromTo('#scene-wedding .ornament-line',
-      { opacity: 1 },
-      { opacity: 0, duration: 0.3, ease: 'none', immediateRender: false }, 1.65)
-    .fromTo('.wedding-bg-img',
+    .fromTo(bgSelector,
       { opacity: 1, scale: 1 },
       { opacity: 0, scale: 1.05, duration: 0.6, ease: 'none', immediateRender: false }, 1.7);
   }
@@ -414,19 +370,17 @@ document.addEventListener('DOMContentLoaded', () => {
   SceneManager.setPinDuration('scene-thankyou', 1.5);
   SceneManager.init();
 
-  gsap.set('.mandap-bg-img', { opacity: 0, scale: 1.05 });
-  gsap.set('#scene-engagement .event-title', { y: -30, opacity: 0 });
-  gsap.set('#scene-engagement .event-subtitle', { y: -20, opacity: 0 });
-  gsap.set('#scene-engagement .ornament-line', { opacity: 0 });
-  gsap.set('#scene-engagement .title-divider', { opacity: 0, scaleX: 0 });
-  gsap.set('.engagement-info', { y: 30, opacity: 0 });
-
-  gsap.set('.wedding-bg-img', { opacity: 0, scale: 1.05 });
-  gsap.set('#scene-wedding .event-title', { y: -30, opacity: 0 });
-  gsap.set('#scene-wedding .event-subtitle', { y: -20, opacity: 0 });
-  gsap.set('#scene-wedding .ornament-line', { opacity: 0 });
-  gsap.set('#scene-wedding .title-divider', { opacity: 0, scaleX: 0 });
-  gsap.set('.wedding-info', { y: 30, opacity: 0 });
+  ['scene-engagement', 'scene-wedding'].forEach(function (id) {
+    var prefix = '#' + id + ' ';
+    var bgSel = id === 'scene-engagement' ? '.mandap-bg-img' : '.wedding-bg-img';
+    var infoSel = id === 'scene-engagement' ? '.engagement-info' : '.wedding-info';
+    gsap.set(bgSel, { opacity: 0, scale: 1.05 });
+    gsap.set(prefix + '.event-title', { y: -30, opacity: 0 });
+    gsap.set(prefix + '.event-subtitle', { y: -20, opacity: 0 });
+    gsap.set(prefix + '.ornament-line', { opacity: 0 });
+    gsap.set(prefix + '.title-divider', { opacity: 0, scaleX: 0 });
+    gsap.set(infoSel, { y: 30, opacity: 0 });
+  });
 
   gsap.set('.couple-dance-img', { opacity: 0, scale: 1.05 });
   gsap.set('.guest-heading', { y: -20, opacity: 0 });
@@ -448,8 +402,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   addCoupleAnimationsToScroll();
   addDateAnimationsToScroll();
-  addEngagementAnimationsToScroll();
-  addWeddingAnimationsToScroll();
+  addEventAnimationsToScroll('scene-engagement', '.mandap-bg-img', '.engagement-info');
+  addEventAnimationsToScroll('scene-wedding', '.wedding-bg-img', '.wedding-info');
   addGuestAnimationsToScroll();
   addGalleryAnimationsToScroll();
   addThankyouAnimationsToScroll();
@@ -489,34 +443,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-
-  // ========================================
-  // QR CODES
-  // ========================================
-  const engagementMapUrl = 'https://maps.app.goo.gl/dgQ7LXW3ZknZo4Yt7';
-  const weddingMapUrl = 'https://maps.app.goo.gl/dgQ7LXW3ZknZo4Yt7';
-
-  function generateQR(containerId, url) {
-    const el = document.getElementById(containerId);
-    if (!el || typeof QRCode === 'undefined') return;
-    new QRCode(el, {
-      text: url,
-      width: 100,
-      height: 100,
-      colorDark: '#3D3226',
-      colorLight: '#FFFFFF',
-      correctLevel: QRCode.CorrectLevel.M
-    });
-  }
-
-  generateQR('engagement-qr', engagementMapUrl);
-  generateQR('wedding-qr', weddingMapUrl);
-
-  const engMapBtn = document.getElementById('engagement-map-btn');
-  if (engMapBtn) engMapBtn.href = engagementMapUrl;
-
-  const wedMapBtn = document.getElementById('wedding-map-btn');
-  if (wedMapBtn) wedMapBtn.href = weddingMapUrl;
 
   // ========================================
   // BACK TO TOP

@@ -81,6 +81,7 @@
     for (var s = 0; s < NUM_ROWS; s++) {
       speeds.push(60 + Math.floor(Math.random() * 30));
     }
+    var tracks = [];
     var rows = [];
 
     function shuffle(arr) {
@@ -119,6 +120,7 @@
       row.appendChild(track);
       wall.appendChild(row);
       rows.push(row);
+      tracks.push(track);
 
       (function (track, rowIdx, reverse, speed) {
         requestAnimationFrame(function () {
@@ -139,8 +141,18 @@
             style.sheet.cssRules.length
           );
           track.style.animation = name + ' ' + speed + 's linear infinite';
+          track.style.animationPlayState = 'paused';
         });
       })(track, r, isReverse, speeds[r]);
+    }
+
+    if (typeof SceneManager !== 'undefined' && SceneManager.onVisibilityChange) {
+      SceneManager.onVisibilityChange('scene-gallery', function (visible) {
+        var state = visible ? 'running' : 'paused';
+        for (var t = 0; t < tracks.length; t++) {
+          tracks[t].style.animationPlayState = state;
+        }
+      });
     }
 
     wall.addEventListener('contextmenu', function (e) {

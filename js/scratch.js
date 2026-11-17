@@ -1,24 +1,24 @@
 function initScratchCard() {
-  const canvas = document.getElementById('scratch-canvas');
+  var canvas = document.getElementById('scratch-canvas');
   if (!canvas) return;
 
-  const ctx = canvas.getContext('2d');
-  let isScratching = false;
-  let revealed = false;
-  let checkCounter = 0;
-  let initialized = false;
+  var ctx = canvas.getContext('2d');
+  var isScratching = false;
+  var revealed = false;
+  var checkCounter = 0;
+  var initialized = false;
 
   function setupCanvas() {
-    const parent = canvas.parentElement;
-    const w = parent.offsetWidth;
-    const h = parent.offsetHeight;
+    var parent = canvas.parentElement;
+    var w = parent.offsetWidth;
+    var h = parent.offsetHeight;
     if (w === 0 || h === 0) return;
     canvas.width = w;
     canvas.height = h;
     initialized = true;
 
     ctx.globalCompositeOperation = 'source-over';
-    const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+    var gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
     gradient.addColorStop(0, '#C5A55A');
     gradient.addColorStop(0.3, '#E8D5A3');
     gradient.addColorStop(0.5, '#D4B96E');
@@ -28,20 +28,20 @@ function initScratchCard() {
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     ctx.fillStyle = 'rgba(255, 255, 255, 0.15)';
-    for (let i = 0; i < 50; i++) {
-      const x = Math.random() * canvas.width;
-      const y = Math.random() * canvas.height;
-      const r = Math.random() * 2.5 + 0.5;
+    for (var i = 0; i < 50; i++) {
+      var x = Math.random() * canvas.width;
+      var y = Math.random() * canvas.height;
+      var r = Math.random() * 2.5 + 0.5;
       ctx.beginPath();
       ctx.arc(x, y, r, 0, Math.PI * 2);
       ctx.fill();
     }
 
     ctx.fillStyle = 'rgba(197, 165, 90, 0.2)';
-    for (let i = 0; i < 30; i++) {
-      const x = Math.random() * canvas.width;
-      const y = Math.random() * canvas.height;
-      const r = Math.random() * 3 + 1;
+    for (var i = 0; i < 30; i++) {
+      var x = Math.random() * canvas.width;
+      var y = Math.random() * canvas.height;
+      var r = Math.random() * 3 + 1;
       ctx.beginPath();
       ctx.arc(x, y, r, 0, Math.PI * 2);
       ctx.fill();
@@ -49,8 +49,8 @@ function initScratchCard() {
   }
 
   function getPos(e) {
-    const rect = canvas.getBoundingClientRect();
-    const touch = e.touches ? e.touches[0] : e;
+    var rect = canvas.getBoundingClientRect();
+    var touch = e.touches ? e.touches[0] : e;
     return {
       x: touch.clientX - rect.left,
       y: touch.clientY - rect.top
@@ -59,7 +59,7 @@ function initScratchCard() {
 
   function scratch(pos) {
     ctx.globalCompositeOperation = 'destination-out';
-    const gradient = ctx.createRadialGradient(pos.x, pos.y, 0, pos.x, pos.y, 28);
+    var gradient = ctx.createRadialGradient(pos.x, pos.y, 0, pos.x, pos.y, 28);
     gradient.addColorStop(0, 'rgba(0,0,0,1)');
     gradient.addColorStop(0.8, 'rgba(0,0,0,0.8)');
     gradient.addColorStop(1, 'rgba(0,0,0,0)');
@@ -69,30 +69,38 @@ function initScratchCard() {
     ctx.fill();
   }
 
+  var SAMPLE_GRID = 20;
   function getScratchPercent() {
-    const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-    let transparent = 0;
-    const total = canvas.width * canvas.height;
-    for (let i = 3; i < imageData.data.length; i += 4) {
-      if (imageData.data[i] < 128) transparent++;
+    var w = canvas.width;
+    var h = canvas.height;
+    if (w === 0 || h === 0) return 0;
+    var stepX = Math.max(1, Math.floor(w / SAMPLE_GRID));
+    var stepY = Math.max(1, Math.floor(h / SAMPLE_GRID));
+    var transparent = 0;
+    var total = 0;
+    for (var y = 0; y < h; y += stepY) {
+      for (var x = 0; x < w; x += stepX) {
+        var pixel = ctx.getImageData(x, y, 1, 1).data;
+        if (pixel[3] < 128) transparent++;
+        total++;
+      }
     }
-    return transparent / total;
+    return total > 0 ? transparent / total : 0;
   }
 
   function createSparkles() {
-    const container = canvas.parentElement;
-    const rect = container.getBoundingClientRect();
-    const count = 20;
+    var container = canvas.parentElement;
+    var count = 20;
 
-    for (let i = 0; i < count; i++) {
-      const sparkle = document.createElement('div');
+    for (var i = 0; i < count; i++) {
+      var sparkle = document.createElement('div');
       sparkle.className = 'scratch-sparkle';
       sparkle.style.left = (Math.random() * 100) + '%';
       sparkle.style.top = (Math.random() * 100) + '%';
       sparkle.style.animationDelay = (Math.random() * 0.3) + 's';
       sparkle.style.animationDuration = (0.6 + Math.random() * 0.4) + 's';
       container.appendChild(sparkle);
-      sparkle.addEventListener('animationend', () => sparkle.remove());
+      sparkle.addEventListener('animationend', function () { this.remove(); });
     }
   }
 
@@ -101,7 +109,7 @@ function initScratchCard() {
     revealed = true;
     createSparkles();
     canvas.classList.add('revealed');
-    const hint = canvas.parentElement.querySelector('.scratch-hint');
+    var hint = canvas.parentElement.querySelector('.scratch-hint');
     if (hint) hint.classList.add('hidden');
   }
 
@@ -109,41 +117,29 @@ function initScratchCard() {
     if (revealed) return;
     checkCounter++;
     if (checkCounter % 3 !== 0) return;
-
-    const percent = getScratchPercent();
-    if (percent > 0.40) {
-      revealCard();
-    }
+    if (getScratchPercent() > 0.40) revealCard();
   }
 
   function onStart(e) {
     e.preventDefault();
     isScratching = true;
-    const pos = getPos(e);
-    scratch(pos);
+    scratch(getPos(e));
     checkCounter = 0;
-
-    const hint = canvas.parentElement.querySelector('.scratch-hint');
+    var hint = canvas.parentElement.querySelector('.scratch-hint');
     if (hint) hint.classList.add('hidden');
   }
 
   function onMove(e) {
     if (!isScratching || revealed) return;
     e.preventDefault();
-    const pos = getPos(e);
-    scratch(pos);
+    scratch(getPos(e));
     checkReveal();
   }
 
   function onEnd() {
     if (!isScratching) return;
     isScratching = false;
-    if (!revealed) {
-      const percent = getScratchPercent();
-      if (percent > 0.40) {
-        revealCard();
-      }
-    }
+    if (!revealed && getScratchPercent() > 0.40) revealCard();
   }
 
   canvas.addEventListener('mousedown', onStart);
@@ -157,8 +153,8 @@ function initScratchCard() {
 
   setupCanvas();
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
       if (entry.isIntersecting && !revealed && !initialized) {
         setupCanvas();
       }
@@ -166,12 +162,12 @@ function initScratchCard() {
   }, { threshold: 0.3 });
   observer.observe(canvas.parentElement);
 
-  const resizeObserver = new ResizeObserver(() => {
+  var resizeObserver = new ResizeObserver(function () {
     if (!revealed) setupCanvas();
   });
   resizeObserver.observe(canvas.parentElement);
 
-  window.addEventListener('resize', () => {
+  window.addEventListener('resize', function () {
     if (!revealed) setupCanvas();
   });
 }

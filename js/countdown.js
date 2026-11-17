@@ -1,30 +1,35 @@
 function initCountdown() {
-  // PLACEHOLDER DATE — replace with actual wedding date
-  const weddingDate = new Date('2026-12-13T07:00:00');
+  var weddingDate = new Date('2026-12-13T07:00:00+05:30');
 
-  const daysEl = document.getElementById('countdown-days');
-  const hoursEl = document.getElementById('countdown-hours');
-  const minutesEl = document.getElementById('countdown-minutes');
-  const secondsEl = document.getElementById('countdown-seconds');
+  var daysEl = document.getElementById('countdown-days');
+  var hoursEl = document.getElementById('countdown-hours');
+  var minutesEl = document.getElementById('countdown-minutes');
+  var secondsEl = document.getElementById('countdown-seconds');
 
   if (!daysEl) return;
 
+  var intervalId = null;
+
   function update() {
-    const now = new Date();
-    const diff = weddingDate - now;
+    var now = new Date();
+    var diff = weddingDate - now;
 
     if (diff <= 0) {
       daysEl.textContent = '0';
       hoursEl.textContent = '00';
       minutesEl.textContent = '00';
       secondsEl.textContent = '00';
+      if (intervalId) {
+        clearInterval(intervalId);
+        intervalId = null;
+      }
       return;
     }
 
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+    var days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
     daysEl.textContent = String(days).padStart(3, '0');
     hoursEl.textContent = String(hours).padStart(2, '0');
@@ -33,5 +38,16 @@ function initCountdown() {
   }
 
   update();
-  setInterval(update, 1000);
+  intervalId = setInterval(update, 1000);
+
+  document.addEventListener('visibilitychange', function () {
+    if (document.hidden) {
+      if (intervalId) { clearInterval(intervalId); intervalId = null; }
+    } else {
+      update();
+      if (!intervalId && weddingDate - new Date() > 0) {
+        intervalId = setInterval(update, 1000);
+      }
+    }
+  });
 }
